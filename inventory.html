@@ -173,7 +173,7 @@
 }
 
 .card:first-child {
-  border-left: 7px solid #367952;
+  border-left: 7px solid #246dec;
 }
 
 .card:nth-child(2) {
@@ -181,7 +181,7 @@
 }
 
 .card:nth-child(3) {
-  border-left: 7px solid #246dec;
+  border-left: 7px solid #367952;
 }
 
 .card:nth-child(4) {
@@ -336,49 +336,50 @@
         </div>
 
         <ul class="sidebar-list">
-          <li class="sidebar-list-item active" onclick="toggleSection('dashboard')">
-            <a href="#" >
-              <span class="material-icons-outlined">dashboard</span> Dashboard
-            </a>
-          </li>
-          <li class="sidebar-list-item" onclick="toggleSection('products')">
-            <a href="#">
-              <span class="material-icons-outlined">inventory_2</span> Products
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">fact_check</span> Inventory
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">shopping_cart</span> Sales Orders
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">poll</span> Reports
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">settings</span> Settings
-            </a>
-          </li>
-        </ul>
+            <li class="sidebar-list-item">
+                <a href="#" data-page="index.html">
+                <span class="material-icons-outlined">dashboard</span> Dashboard
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#" data-page="product.html">
+                <span class="material-icons-outlined">inventory_2</span> Products
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="inventory.html">
+                <span class="material-icons-outlined">fact_check</span> Inventory
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="purchase.html">
+                <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="sales.html">
+                <span class="material-icons-outlined">shopping_cart</span> Sales Orders
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="reports.html">
+                <span class="material-icons-outlined">poll</span> Reports
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="settings.html">
+                <span class="material-icons-outlined">settings</span> Settings
+              </a>
+            </li>
+          </ul>
+          
       </aside>
       <!-- End Sidebar -->
 
       <!-- Main -->
-       <main class="main-container" id="dashboardContent">
+      <main class="main-container">
         <div class="main-title">
-          <p class="font-weight-bold">DASHBOARD</p>
+          <p class="font-weight-bold">INVENTORY</p>
         </div>
 
         <div class="main-cards">
@@ -431,33 +432,6 @@
 
         </div>
       </main>
-
-      <main class="main-container" id="productTableSection" style="display: none;">
-        <div class="main-title">
-          <p class="font-weight-bold">PRODUCTS</p>
-        </div>
-        <input type="text" id="searchInput" placeholder="Search by product name..." style="padding: 10px; margin-bottom: 16px;" onkeyup="searchProduct()">
-
-        <table id="productTable" style="width: 100%;
-        background-color: white;
-        border: 1px solid black;">
-          <thead>
-            <tr>
-              <th>Sl No.</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Product Type</th>
-              <th>Purchase Order</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <!-- Data will be inserted by JavaScript -->
-          </tbody>
-        </table>
-      </main>
-
-   
-
       <!-- End Main -->
 
     </div>
@@ -585,82 +559,42 @@ const areaChart = new ApexCharts(
   document.querySelector('#area-chart'),
   areaChartOptions
 );
-areaChart.render();  
-    </script>
-<script>
-function toggleSection(section) {
-    // Hide both sections initially
-    document.getElementById('dashboardContent').style.display = 'none';
-    document.getElementById('productTableSection').style.display = 'none';
+areaChart.render();
 
-    // Show the clicked section
-    if (section === 'dashboard') {
-        document.getElementById('dashboardContent').style.display = 'block';
-    } else if (section === 'products') {
-        document.getElementById('productTableSection').style.display = 'block';
-    }
-
-    // Remove 'active' class from all sidebar items
-    document.querySelectorAll('.sidebar-list-item').forEach(item => item.classList.remove('active'));
-
-    // Add 'active' class to the clicked sidebar item
-    const activeItem = Array.from(document.querySelectorAll('.sidebar-list-item')).find(item => item.textContent.toLowerCase().includes(section));
-    if (activeItem) {
-        activeItem.classList.add('active');
-    }
-}
-
-  </script>
-
-  <script>
-    const products = [
-      { product: "Laptop", price: 1200, type: "Electronics", po: "PO001" },
-      { product: "Chair", price: 85, type: "Furniture", po: "PO002" },
-      { product: "Mouse", price: 25, type: "Electronics", po: "PO003" },
-      { product: "Table", price: 200, type: "Furniture", po: "PO004" },
-      { product: "Notebook", price: 3, type: "Stationery", po: "PO005" },
-      { product: "Pen", price: 1.5, type: "Stationery", po: "PO006" },
-      { product: "Monitor", price: 300, type: "Electronics", po: "PO007" },
-      { product: "Keyboard", price: 45, type: "Electronics", po: "PO008" },
-      { product: "Backpack", price: 60, type: "Accessories", po: "PO009" },
-      { product: "Shoes", price: 80, type: "Footwear", po: "PO010" },
-      { product: "Phone", price: 999, type: "Electronics", po: "PO011" },
-      { product: "Lamp", price: 40, type: "Lighting", po: "PO012" },
-      { product: "Bookshelf", price: 150, type: "Furniture", po: "PO013" },
-      { product: "Headphones", price: 120, type: "Electronics", po: "PO014" },
-      { product: "T-shirt", price: 20, type: "Clothing", po: "PO015" },
-      { product: "Water Bottle", price: 10, type: "Accessories", po: "PO016" },
-      { product: "Fan", price: 70, type: "Appliances", po: "PO017" },
-      { product: "Sofa", price: 700, type: "Furniture", po: "PO018" },
-      { product: "Pencil", price: 0.5, type: "Stationery", po: "PO019" },
-      { product: "Watch", price: 250, type: "Accessories", po: "PO020" }
-    ];
-
-    const tableBody = document.getElementById("tableBody");
-
-    function renderTable(data) {
-      tableBody.innerHTML = "";
-      data.forEach((item, index) => {
-        const row = `<tr>
-          <td style="text-align: center;">${index + 1}</td>
-          <td style="text-align: center;">${item.product}</td>
-          <td style="text-align: center;">$${item.price}</td>
-          <td  style="text-align: center;">${item.type}</td>
-          <td  style="text-align: center;">${item.po}</td>
-        </tr>`;
-        tableBody.insertAdjacentHTML('beforeend', row);
+function loadPage(page) {
+    fetch(page)
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("main-content").innerHTML = html;
+        updateActiveLink(page);
+      })
+      .catch(err => {
+        console.error("Page load error", err);
+        document.getElementById("main-content").innerHTML = "<p>Error loading page.</p>";
       });
-    }
+  }
 
-    function searchProduct() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const filtered = products.filter(p => p.product.toLowerCase().includes(input));
-      renderTable(filtered);
-    }
+  function updateActiveLink(currentPage) {
+    document.querySelectorAll(".sidebar-list-item").forEach(item => {
+      const link = item.querySelector("a");
+      const page = link.getAttribute("data-page");
+      item.classList.toggle("active", page === currentPage);
+    });
+  }
 
-    // Initial table load
-    renderTable(products);
-  </script>  
-      
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".sidebar-list-item a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const page = link.getAttribute("data-page");
+        loadPage(page);
+      });
+    });
+
+    // Load default page
+    loadPage("index.html");
+  });
+
+    </script>
   </body>
 </html>

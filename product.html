@@ -27,25 +27,10 @@
   line-height: 1px;
 }
 
-.text-primary {
-  color: #666666;
-}
 
-.text-blue {
-  color: #246dec;
-}
 
-.text-red {
-  color: #cc3c43;
-}
 
-.text-green {
-  color: #367952;
-}
 
-.text-orange {
-  color: #f5b74f;
-}
 
 .font-weight-bold {
   font-weight: 600;
@@ -173,7 +158,7 @@
 }
 
 .card:first-child {
-  border-left: 7px solid #367952;
+  border-left: 7px solid #246dec;
 }
 
 .card:nth-child(2) {
@@ -181,7 +166,7 @@
 }
 
 .card:nth-child(3) {
-  border-left: 7px solid #246dec;
+  border-left: 7px solid #367952;
 }
 
 .card:nth-child(4) {
@@ -211,17 +196,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-}
-
-.charts-card {
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  padding: 25px;
-  box-sizing: border-box;
-  -webkit-column-break-inside: avoid;
-  border: 1px solid #d2d2d3;
-  border-radius: 5px;
-  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
 }
 
 .chart-title {
@@ -336,103 +310,48 @@
         </div>
 
         <ul class="sidebar-list">
-          <li class="sidebar-list-item active" onclick="toggleSection('dashboard')">
-            <a href="#" >
-              <span class="material-icons-outlined">dashboard</span> Dashboard
-            </a>
-          </li>
-          <li class="sidebar-list-item" onclick="toggleSection('products')">
-            <a href="#">
-              <span class="material-icons-outlined">inventory_2</span> Products
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">fact_check</span> Inventory
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">shopping_cart</span> Sales Orders
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">poll</span> Reports
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">settings</span> Settings
-            </a>
-          </li>
-        </ul>
+            <li class="sidebar-list-item">
+                <a href="index.html">
+                <span class="material-icons-outlined">dashboard</span> Dashboard
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="product.html">
+                <span class="material-icons-outlined">inventory_2</span> Products
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="inventory.html">
+                <span class="material-icons-outlined">fact_check</span> Inventory
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="purchase.html">
+                <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="sales.html">
+                <span class="material-icons-outlined">shopping_cart</span> Sales Orders
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="reports.html">
+                <span class="material-icons-outlined">poll</span> Reports
+              </a>
+            </li>
+            <li class="sidebar-list-item">
+              <a href="settings.html">
+                <span class="material-icons-outlined">settings</span> Settings
+              </a>
+            </li>
+          </ul>
+          
       </aside>
       <!-- End Sidebar -->
 
       <!-- Main -->
-       <main class="main-container" id="dashboardContent">
-        <div class="main-title">
-          <p class="font-weight-bold">DASHBOARD</p>
-        </div>
-
-        <div class="main-cards">
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">PRODUCTS</p>
-              <span class="material-icons-outlined text-green">inventory_2</span>
-            </div>
-            <span class="text-primary font-weight-bold">249</span>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">PURCHASE ORDERS</p>
-              <span class="material-icons-outlined text-orange">add_shopping_cart</span>
-            </div>
-            <span class="text-primary font-weight-bold">83</span>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">SALES ORDERS</p>
-              <span class="material-icons-outlined text-blue">shopping_cart</span>
-            </div>
-            <span class="text-primary font-weight-bold">79</span>
-          </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">INVENTORY ALERTS</p>
-              <span class="material-icons-outlined text-red">notification_important</span>
-            </div>
-            <span class="text-primary font-weight-bold">56</span>
-          </div>
-
-        </div>
-
-        <div class="charts">
-
-          <div class="charts-card">
-            <p class="chart-title">Top 5 Products</p>
-            <div id="bar-chart"></div>
-          </div>
-
-          <div class="charts-card">
-            <p class="chart-title">Purchase and Sales Orders</p>
-            <div id="area-chart"></div>
-          </div>
-
-        </div>
-      </main>
-
-      <main class="main-container" id="productTableSection" style="display: none;">
+      <main class="main-container">
         <div class="main-title">
           <p class="font-weight-bold">PRODUCTS</p>
         </div>
@@ -455,9 +374,6 @@
           </tbody>
         </table>
       </main>
-
-   
-
       <!-- End Main -->
 
     </div>
@@ -486,134 +402,7 @@ function closeSidebar() {
   }
 }
 
-
-
-const barChartOptions = {
-  series: [
-    {
-      data: [10, 8, 6, 4, 2],
-    },
-  ],
-  chart: {
-    type: 'bar',
-    height: 350,
-    toolbar: {
-      show: false,
-    },
-  },
-  colors: ['#246dec', '#cc3c43', '#367952', '#f5b74f', '#4f35a1'],
-  plotOptions: {
-    bar: {
-      distributed: true,
-      borderRadius: 4,
-      horizontal: false,
-      columnWidth: '40%',
-    },
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  legend: {
-    show: false,
-  },
-  xaxis: {
-    categories: ['Laptop', 'Phone', 'Monitor', 'Headphones', 'Camera'],
-  },
-  yaxis: {
-    title: {
-      text: 'Count',
-    },
-  },
-};
-
-const barChart = new ApexCharts(
-  document.querySelector('#bar-chart'),
-  barChartOptions
-);
-barChart.render();
-
-// AREA CHART
-const areaChartOptions = {
-  series: [
-    {
-      name: 'Purchase Orders',
-      data: [31, 40, 28, 51, 42, 109, 100],
-    },
-    {
-      name: 'Sales Orders',
-      data: [11, 32, 45, 32, 34, 52, 41],
-    },
-  ],
-  chart: {
-    height: 350,
-    type: 'area',
-    toolbar: {
-      show: false,
-    },
-  },
-  colors: ['#4f35a1', '#246dec'],
-  dataLabels: {
-    enabled: false,
-  },
-  stroke: {
-    curve: 'smooth',
-  },
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-  markers: {
-    size: 0,
-  },
-  yaxis: [
-    {
-      title: {
-        text: 'Purchase Orders',
-      },
-    },
-    {
-      opposite: true,
-      title: {
-        text: 'Sales Orders',
-      },
-    },
-  ],
-  tooltip: {
-    shared: true,
-    intersect: false,
-  },
-};
-
-const areaChart = new ApexCharts(
-  document.querySelector('#area-chart'),
-  areaChartOptions
-);
-areaChart.render();  
-    </script>
-<script>
-function toggleSection(section) {
-    // Hide both sections initially
-    document.getElementById('dashboardContent').style.display = 'none';
-    document.getElementById('productTableSection').style.display = 'none';
-
-    // Show the clicked section
-    if (section === 'dashboard') {
-        document.getElementById('dashboardContent').style.display = 'block';
-    } else if (section === 'products') {
-        document.getElementById('productTableSection').style.display = 'block';
-    }
-
-    // Remove 'active' class from all sidebar items
-    document.querySelectorAll('.sidebar-list-item').forEach(item => item.classList.remove('active'));
-
-    // Add 'active' class to the clicked sidebar item
-    const activeItem = Array.from(document.querySelectorAll('.sidebar-list-item')).find(item => item.textContent.toLowerCase().includes(section));
-    if (activeItem) {
-        activeItem.classList.add('active');
-    }
-}
-
-  </script>
-
-  <script>
-    const products = [
+const products = [
       { product: "Laptop", price: 1200, type: "Electronics", po: "PO001" },
       { product: "Chair", price: 85, type: "Furniture", po: "PO002" },
       { product: "Mouse", price: 25, type: "Electronics", po: "PO003" },
@@ -660,7 +449,10 @@ function toggleSection(section) {
 
     // Initial table load
     renderTable(products);
-  </script>  
-      
+
+
+
+
+    </script>
   </body>
 </html>
